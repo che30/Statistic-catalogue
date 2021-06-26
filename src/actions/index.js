@@ -2,6 +2,7 @@ const SEARCH_MOVIE = 'SEARCH MOVIE';
 const FETCH_MOVIE_REQUEST = 'SEARCH REQUEST';
 const SEARCH_MOVIE_SUCCES = 'SUCCESS';
 const SEARCH_MOVIE_FAILURE = 'FAILURE';
+const SEARCH_MOVIE_DETAIL = 'SEARCH_MOVIE_DETAIL';
 const SearchMovie = (movies) => ({
   type: SEARCH_MOVIE,
   movies,
@@ -29,10 +30,14 @@ const FetchApidata = () => (dispatch) => {
       dispatch(SearchMovieFailure(errMsg));
     });
 };
-
+const searchMovieDetail =(id) =>({
+  type: SEARCH_MOVIE_DETAIL,
+  id,
+})
 export {
   SearchMovie, FetchMovieRequest,
   FetchApidata,
+  searchMovieDetail,
   SEARCH_MOVIE_FAILURE,
   SEARCH_MOVIE_SUCCES,
   FETCH_MOVIE_REQUEST,

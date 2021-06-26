@@ -34,8 +34,20 @@ const Movies = ({ movie, FetchApidata }) => {
   }
   return (
     <div>
-      <Link to="/movieDetails">{movie.movies.map((elt) => <img src={elt.Poster} key={elt.imbdID} alt="batman" />)}</Link>
+      {movie.movies.map((elt) => (
+        <Link
+          to={{
+            pathname: '/movieDetails',
+            state: { imdbID: elt.imdbID },
+          }}
+          key={elt.imbdID}
+        >
+          <img src={elt.Poster} key={elt.imbdID} alt="batman" />
+        </Link>
+
+      ))}
     </div>
+
   );
 };
 Movies.propTypes = {

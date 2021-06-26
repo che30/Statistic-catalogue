@@ -12,6 +12,7 @@ const initialState = {
   movies: [],
   error: '',
   year: '',
+  imbdID: '',
 
 };
 
@@ -23,6 +24,7 @@ const getMovie = (state = initialState, action) => {
         movies: action.movies,
         title: action.movies.Title,
         year: action.movies.Year,
+        imbdID: action.movies.imbdID,
       };
     case FETCH_MOVIE_REQUEST:
       return {
@@ -36,6 +38,7 @@ const getMovie = (state = initialState, action) => {
         title: action.payload.Title,
         error: '',
         year: action.payload.Year,
+        imbdID: action.payload.imbdID,
       };
     case SEARCH_MOVIE_FAILURE:
       return {
