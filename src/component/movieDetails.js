@@ -20,20 +20,52 @@ const movieDetails = (props) => {
   }
   console.log(movieData.movieData);
   return (
-    <div>
-      <img src={movieData.movieData.Poster} alt={movieData.movieData.Title} />
-      <div>{movieData.movieData.Title}</div>
-      <div>{movieData.movieData.Actors}</div>
-      <div>{movieData.movieData.Director}</div>
-      <div>{movieData.movieData.Awards}</div>
-      <div>{movieData.movieData.Writer}</div>
-      <div>{movieData.movieData.Year}</div>
-      <div>{movieData.movieData.Production}</div>
+    <div className="mt-5">
+      <img className="w-50" src={movieData.movieData.Poster} alt={movieData.movieData.Title} />
+
+      <div className="text-center">
+        <span> Title: </span>
+        {movieData.movieData.Title}
+      </div>
+
+      <div>
+        <span> Date released: </span>
+        {movieData.movieData.Released}
+      </div>
+      <div>
+        <span> Genre: </span>
+        {movieData.movieData.Genre}
+      </div>
+      <div>
+        <span> Country: </span>
+        {movieData.movieData.Country}
+      </div>
+      <div>
+        <span> Actor: </span>
+        {movieData.movieData.Actors}
+      </div>
+      <div>
+        <span>Director: </span>
+        {movieData.movieData.Director}
+      </div>
+      <div>
+        <span>Awards: </span>
+        {movieData.movieData.Awards}
+      </div>
+      <div>
+        <span>Writer: </span>
+        {movieData.movieData.Writer}
+      </div>
+      <div>
+        <span>Year: </span>
+        {movieData.movieData.Year}
+      </div>
+      <div>
+        <span>Production:  </span>
+        {movieData.movieData.Production}
+      </div>
     </div>
   );
 };
-// const mapDispatchToProps = (dispatch) => ({
-//   search: (movie) => { dispatch(searchMovieDetail(movie)); },
-// });
 
 export default (movieDetails);
