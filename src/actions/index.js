@@ -1,0 +1,40 @@
+const SEARCH_MOVIE = 'SEARCH MOVIE';
+const FETCH_MOVIE_REQUEST = 'SEARCH REQUEST';
+const SEARCH_MOVIE_SUCCES = 'SUCCESS';
+const SEARCH_MOVIE_FAILURE = 'FAILURE';
+const SearchMovie = (movies) => ({
+  type: SEARCH_MOVIE,
+  movies,
+});
+const FetchMovieRequest = () => ({
+  type: FETCH_MOVIE_REQUEST,
+});
+const FetchMovieSucces = (movie) => ({
+  type: SEARCH_MOVIE_SUCCES,
+  payload: movie,
+});
+const SearchMovieFailure = (error) => ({
+  type: SEARCH_MOVIE_FAILURE,
+  error,
+});
+const FetchApidata = () => (dispatch) => {
+  dispatch(FetchMovieRequest);
+  fetch('http://www.omdbapi.com/?apikey=42852a78&s=batman')
+    .then((response) => response.json())
+    .then((response) => {
+      dispatch(FetchMovieSucces([...response.Search]));
+    })
+    .catch((err) => {
+      const errMsg = err.message;
+      dispatch(SearchMovieFailure(errMsg));
+    });
+};
+
+export {
+  SearchMovie, FetchMovieRequest,
+  FetchApidata,
+  SEARCH_MOVIE_FAILURE,
+  SEARCH_MOVIE_SUCCES,
+  FETCH_MOVIE_REQUEST,
+  SEARCH_MOVIE,
+};

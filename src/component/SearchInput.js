@@ -1,7 +1,12 @@
 import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { FetchdefaultData } from '../container/Fetchdata';
+import { SearchMovie } from '../actions';
 
-const SearchInput = () => {
+const SearchInput = ({ search }) => {
+  FetchdefaultData();
   const [movie, setMovie] = useState({
     movieTitle: '',
   });
@@ -12,8 +17,18 @@ const SearchInput = () => {
       });
     }
   };
-  const handleSubmit = (event) => {
-    console.log(event.target);
+
+  const handleSubmit = () => {
+    if (movie.movieTitle !== '') {
+      fetch(`http://www.omdbapi.com/?apikey=42852a78&s=${movie.movieTitle}`)
+        .then((response) => response.json())
+        .then((response) => {
+          search(response.Search);
+        });
+    }
+    setMovie({
+      movieTitle: '',
+    });
   };
   return (
     <>
@@ -30,4 +45,10 @@ const SearchInput = () => {
     </>
   );
 };
-export default SearchInput;
+SearchInput.propTypes = {
+  search: PropTypes.func.isRequired,
+};
+const mapDispatchToProps = (dispatch) => ({
+  search: (movie) => { dispatch(SearchMovie(movie)); },
+});
+export default connect(null, mapDispatchToProps)(SearchInput);

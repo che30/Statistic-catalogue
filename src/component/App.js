@@ -1,12 +1,12 @@
 import React from 'react';
-import FetchData from '../container/Fetchdata';
 import SearchInput from './SearchInput';
+import Movies from './Movies';
 
 function App() {
-  FetchData();
   return (
     <div className="App">
       <SearchInput />
+      <Movies />
     </div>
   );
 }
