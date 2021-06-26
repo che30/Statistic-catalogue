@@ -4,7 +4,7 @@ import Movies from './Movies';
 
 function App() {
   return (
-    <div className="App">
+    <div className="">
       <SearchInput />
       <Movies />
     </div>

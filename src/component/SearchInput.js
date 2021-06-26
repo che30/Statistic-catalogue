@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { FetchdefaultData } from '../container/Fetchdata';
 import { SearchMovie } from '../actions';
+import YearFilter from './YearFilter';
 
 const SearchInput = ({ getMovie }) => {
   FetchdefaultData();
@@ -31,7 +32,7 @@ const SearchInput = ({ getMovie }) => {
     });
   };
   return (
-    <>
+    <div className="d-flex align-items-baseline justify-content-around">
       <form className="d-flex mt-3">
         <input
           type="input"
@@ -42,7 +43,8 @@ const SearchInput = ({ getMovie }) => {
         />
         <button type="button" onClick={handleSubmit}>search </button>
       </form>
-    </>
+      <YearFilter />
+    </div>
   );
 };
 SearchInput.propTypes = {
