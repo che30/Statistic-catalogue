@@ -13,6 +13,7 @@ const Movies = ({ movie, FetchApidata }) => {
   useEffect(() => {
     FetchApidata();
   }, []);
+  console.log(movie);
   if (movie.loading) {
     return (
       <div>
@@ -54,7 +55,7 @@ Movies.propTypes = {
   FetchApidata: PropTypes.func.isRequired,
 };
 const mapStateToProps = (state) => ({
-  movie: state,
+  movie: state.movie,
 });
 const mapDispatchToProps = (dispatch) => ({
   FetchApidata: () => dispatch(FetchApidata()),

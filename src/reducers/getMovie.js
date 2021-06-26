@@ -15,7 +15,6 @@ const initialState = {
   imbdID: '',
 
 };
-
 const getMovie = (state = initialState, action) => {
   switch (action.type) {
     case SEARCH_MOVIE:
@@ -24,7 +23,7 @@ const getMovie = (state = initialState, action) => {
         movies: action.movies,
         title: action.movies.Title,
         year: action.movies.Year,
-        imbdID: action.movies.imbdID,
+        imbdID: action.movies.imdbID,
       };
     case FETCH_MOVIE_REQUEST:
       return {
@@ -38,7 +37,7 @@ const getMovie = (state = initialState, action) => {
         title: action.payload.Title,
         error: '',
         year: action.payload.Year,
-        imbdID: action.payload.imbdID,
+        imbdID: action.payload.imdbID,
       };
     case SEARCH_MOVIE_FAILURE:
       return {

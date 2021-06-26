@@ -1,8 +1,9 @@
-import { combineReducers } from "redux";
-import movieDetail from "./movieDetail";
-import getMovie from "./searchMovie";
-const rootReducer = () =>combineReducers({
+import { combineReducers } from 'redux';
+import movieDetail from './movieDetail';
+import getMovie from './getMovie';
+
+const rootReducer = () => combineReducers({
   movieDetail,
-  getMovie
-})
-export default rootReducer
+  movie: getMovie,
+});
+export default rootReducer;

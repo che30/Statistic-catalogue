@@ -30,10 +30,10 @@ const FetchApidata = () => (dispatch) => {
       dispatch(SearchMovieFailure(errMsg));
     });
 };
-const searchMovieDetail =(movie) =>({
+const searchMovieDetail = (movie) => ({
   type: SEARCH_MOVIE_DETAIL,
-  movie
-})
+  movie,
+});
 export {
   SearchMovie, FetchMovieRequest,
   FetchApidata,

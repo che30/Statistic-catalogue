@@ -9,11 +9,11 @@ import { Provider } from 'react-redux';
 import { createStore, compose, applyMiddleware } from 'redux';
 // import App from './component/App';
 import { BrowserRouter } from 'react-router-dom';
-import getMovie from './reducers';
 import Routes from './Route';
+import rootReducer from './reducers';
 
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-const store = createStore(getMovie, composeEnhancer(applyMiddleware(thunk)));
+const store = createStore(rootReducer(), composeEnhancer(applyMiddleware(thunk)));
 ReactDOM.render(
   <BrowserRouter>
     <Provider store={store}>
