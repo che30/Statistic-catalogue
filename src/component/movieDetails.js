@@ -20,10 +20,10 @@ const movieDetails = (props) => {
   }
   console.log(movieData.movieData);
   return (
-    <div className="mt-5">
+    <div className="mt-5 text-center">
       <img className="w-50" src={movieData.movieData.Poster} alt={movieData.movieData.Title} />
 
-      <div className="text-center">
+      <div>
         <span> Title: </span>
         {movieData.movieData.Title}
       </div>

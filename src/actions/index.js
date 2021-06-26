@@ -3,6 +3,7 @@ const FETCH_MOVIE_REQUEST = 'SEARCH REQUEST';
 const SEARCH_MOVIE_SUCCES = 'SUCCESS';
 const SEARCH_MOVIE_FAILURE = 'FAILURE';
 const SEARCH_MOVIE_DETAIL = 'SEARCH_MOVIE_DETAIL';
+const YEAR_FILTER = 'YEAR FILTER'
 const SearchMovie = (movies) => ({
   type: SEARCH_MOVIE,
   movies,
@@ -34,10 +35,16 @@ const searchMovieDetail = (movie) => ({
   type: SEARCH_MOVIE_DETAIL,
   movie,
 });
+const FilterYear = (year) =>({
+    type: YEAR_FILTER,
+    year,
+})
 export {
   SearchMovie, FetchMovieRequest,
   FetchApidata,
   searchMovieDetail,
+  FilterYear,
+  YEAR_FILTER,
   SEARCH_MOVIE_DETAIL,
   SEARCH_MOVIE_FAILURE,
   SEARCH_MOVIE_SUCCES,

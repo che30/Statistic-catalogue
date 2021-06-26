@@ -18,13 +18,16 @@ const initialState = {
 const getMovie = (state = initialState, action) => {
   switch (action.type) {
     case SEARCH_MOVIE:
-      return {
-        ...state,
-        movies: action.movies,
-        title: action.movies.Title,
-        year: action.movies.Year,
-        imbdID: action.movies.imdbID,
-      };
+      if (action.movies) {
+        return {
+          ...state,
+          movies: action.movies,
+          title: action.movies.Title,
+          year: action.movies.Year,
+          imbdID: action.movies.imdbID,
+        };
+      }
+      break;
     case FETCH_MOVIE_REQUEST:
       return {
         ...state,
@@ -49,5 +52,6 @@ const getMovie = (state = initialState, action) => {
     default:
       return state;
   }
+  return false;
 };
 export default getMovie;
