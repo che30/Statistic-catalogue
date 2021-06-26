@@ -13,7 +13,6 @@ const Movies = ({ movie, FetchApidata }) => {
   useEffect(() => {
     FetchApidata();
   }, []);
-  console.log(movie);
   if (movie.loading) {
     return (
       <div>
