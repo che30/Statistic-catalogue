@@ -63,18 +63,19 @@ const Movies = ({
     <div>
       <YearFilter changeFilter={changeFilter} />
       ,
-      <div>
+      <div className="d-flex justify-content-around flex-wrap">
         {filteredMovies.map((elt) => (
-          <Link
-            to={{
-              pathname: '/movieDetails',
-              state: { imdbID: elt.imdbID },
-            }}
-            key={elt.imbdID}
-          >
-            <img src={elt.Poster} key={elt.imbdID} alt="batman" />
-          </Link>
-
+          <div key={elt.imbdID}>
+            <Link
+              to={{
+                pathname: '/movieDetails',
+                state: { imdbID: elt.imdbID },
+              }}
+              key={elt.imbdID}
+            >
+              <img src={elt.Poster} key={elt.imbdID} alt="batman" />
+            </Link>
+          </div>
         ))}
       </div>
     </div>
