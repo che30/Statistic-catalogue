@@ -15,9 +15,6 @@ const Movies = ({
   movie, FetchApidata, changeFilter,
   yearfiltre,
 }) => {
-  if (yearfiltre.slice(0, 4)) {
-    // console.log(yearfiltre.slice(0, 4));
-  }
   useEffect(() => {
     FetchApidata();
   }, []);
@@ -41,7 +38,6 @@ const Movies = ({
     );
   }
   let filteredMovies = [];
-  // console.log(movie.movies[0].Year);
   if (yearfiltre.slice(0, 4)) {
     if (yearfiltre !== 'All') {
       movie.movies.map((movie) => {
@@ -60,32 +56,32 @@ const Movies = ({
     <div>
       <YearFilter changeFilter={changeFilter} />
       ,
-      <div className="d-flex justify-content-around flex-wrap align-items-center">
-        {filteredMovies.map((elt) => (
-          <div key={elt.imbdID} className="pt-4">
-            <Link
-              to={{
-                pathname: '/movieDetails',
-                state: { imdbID: elt.imdbID },
-              }}
-              key={elt.imbdID}
-            >
-              <img src={elt.Poster} key={elt.imbdID} alt="batman" />
-            </Link>
-          </div>
-        ))}
+      <div className="container">
+
+        <div className="row ">
+          {filteredMovies.map((elt) => (
+            <div key={elt.imbdID} className="pt-4 pr-3 col-4 ">
+              <Link
+                to={{
+                  pathname: '/movieDetails',
+                  state: { imdbID: elt.imdbID },
+                }}
+                key={elt.imbdID}
+              >
+                <img src={elt.Poster} key={elt.imbdID} alt="batman" />
+              </Link>
+            </div>
+          ))}
+        </div>
+
       </div>
     </div>
 
   );
 };
-// Movies.defaultProps = {
-//   yearFilter: 'All',
-// };
 Movies.propTypes = {
   FetchApidata: PropTypes.func.isRequired,
   changeFilter: PropTypes.func.isRequired,
-  // yearFilter: PropTypes.string,
 };
 const mapStateToProps = (state) => ({
   movie: state.movie,
