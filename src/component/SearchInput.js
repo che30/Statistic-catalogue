@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { connect } from 'react-redux';
