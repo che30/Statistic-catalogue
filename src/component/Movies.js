@@ -7,9 +7,16 @@ import PropTypes from 'prop-types';
 import {
   Link,
 } from 'react-router-dom';
-import { FetchApidata } from '../actions';
+import { FetchApidata, FilterYear } from '../actions';
+import YearFilter from './YearFilter';
 
-const Movies = ({ movie, FetchApidata }) => {
+const Movies = ({
+  movie, FetchApidata, changeFilter,
+  yearfiltre,
+}) => {
+  if (yearfiltre.slice(0, 4)) {
+    // console.log(yearfiltre.slice(0, 4));
+  }
   useEffect(() => {
     FetchApidata();
   }, []);
@@ -22,7 +29,7 @@ const Movies = ({ movie, FetchApidata }) => {
   } if (movie.error) {
     return (
       <div>
-        {movie.error}
+        There was an error fetching this movie check your internet connection
       </div>
     );
   } if (movie.movies === undefined) {
@@ -32,32 +39,64 @@ const Movies = ({ movie, FetchApidata }) => {
       </div>
     );
   }
+  let filteredMovies = [];
+  // console.log(movie.movies[0].Year);
+  if (yearfiltre.slice(0, 4)) {
+    if (yearfiltre !== 'All') {
+      movie.movies.map((movie) => {
+        if (movie.Year === yearfiltre.slice(0, 4)
+        || movie.Year === (Number(yearfiltre.slice(0, 4)) + 1).toString()
+        || movie.Year === (Number(yearfiltre.slice(0, 4)) + 2).toString()) {
+          filteredMovies.push(movie);
+        }
+        return false;
+      });
+    } else {
+      filteredMovies = [...movie.movies];
+    }
+    // filteredMovies = (yearfiltre !== 'All') ? movie.movies.filter((movie) => {
+    //   console.log(movie.Year === yearfiltre.slice(0, 4));
+    //   return (movie.Year === (Number(yearfiltre.slice(0, 4)) + 1).toString());
+    // }) : movie.movies;
+  }
   return (
     <div>
-      {movie.movies.map((elt) => (
-        <Link
-          to={{
-            pathname: '/movieDetails',
-            state: { imdbID: elt.imdbID },
-          }}
-          key={elt.imbdID}
-        >
-          <img src={elt.Poster} key={elt.imbdID} alt="batman" />
-        </Link>
+      <YearFilter changeFilter={changeFilter} />
+      ,
+      <div>
+        {filteredMovies.map((elt) => (
+          <Link
+            to={{
+              pathname: '/movieDetails',
+              state: { imdbID: elt.imdbID },
+            }}
+            key={elt.imbdID}
+          >
+            <img src={elt.Poster} key={elt.imbdID} alt="batman" />
+          </Link>
 
-      ))}
+        ))}
+      </div>
     </div>
 
   );
 };
+// Movies.defaultProps = {
+//   yearFilter: 'All',
+// };
 Movies.propTypes = {
   FetchApidata: PropTypes.func.isRequired,
+  changeFilter: PropTypes.func.isRequired,
+  // yearFilter: PropTypes.string,
 };
 const mapStateToProps = (state) => ({
   movie: state.movie,
+  yearfiltre: state.YearFilter,
+
 });
 const mapDispatchToProps = (dispatch) => ({
   FetchApidata: () => dispatch(FetchApidata()),
+  changeFilter: (category) => dispatch(FilterYear(category)),
 });
 export default connect(mapStateToProps, mapDispatchToProps)(Movies);
 /* eslint-enable react/require-default-props */

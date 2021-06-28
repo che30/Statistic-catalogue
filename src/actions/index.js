@@ -39,6 +39,14 @@ const FilterYear = (year) => ({
   type: YEAR_FILTER,
   year,
 });
+// } ({
+//   type: YEAR_FILTER,
+//   year,
+// });
+//  ({
+//   type: YEAR_FILTER,
+//   year,
+// });
 export {
   SearchMovie, FetchMovieRequest,
   FetchApidata,

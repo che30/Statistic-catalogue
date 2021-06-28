@@ -1,10 +1,11 @@
+/* eslint-disable react/prop-types */
 import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { FetchdefaultData } from '../container/Fetchdata';
 import { SearchMovie } from '../actions';
-import YearFilter from './YearFilter';
+// import YearFilter from './YearFilter';
 
 const SearchInput = ({ getMovie }) => {
   FetchdefaultData();
@@ -18,7 +19,7 @@ const SearchInput = ({ getMovie }) => {
       });
     }
   };
-
+  // console.log(storemovie);
   const handleSubmit = () => {
     if (movie.movieTitle !== '') {
       fetch(`http://www.omdbapi.com/?apikey=42852a78&s=${movie.movieTitle}`)
@@ -43,14 +44,19 @@ const SearchInput = ({ getMovie }) => {
         />
         <button type="button" onClick={handleSubmit}>search </button>
       </form>
-      <YearFilter />
+      {/* <YearFilter changeFilter={changeFilter} /> */}
     </div>
   );
 };
 SearchInput.propTypes = {
   getMovie: PropTypes.func.isRequired,
+  // changeFilter: PropTypes.func.isRequired,
 };
+// const mapStateProps = (state) => ({
+//   storemovie: state.movie,
+// });
 const mapDispatchToProps = (dispatch) => ({
-  getMovie: (movie) => { dispatch(SearchMovie(movie)); },
+  getMovie: (movie) => dispatch(SearchMovie(movie)),
+  // changeFilter: (category) => dispatch(FilterYear(category)),
 });
 export default connect(null, mapDispatchToProps)(SearchInput);

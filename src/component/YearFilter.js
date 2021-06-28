@@ -3,7 +3,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const YearFilter = ({ changeFilter }) => {
-  const categories = ['2000-2002', '2003-2005',
+  const categories = ['All', '2000-2002', '2003-2005',
     '2006-2008', '2009-2011', '2012-2014', '2016-2018', '2020-2021'];
   return (
     <div>
