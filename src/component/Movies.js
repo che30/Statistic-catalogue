@@ -9,6 +9,7 @@ import {
 } from 'react-router-dom';
 import { FetchApidata, FilterYear } from '../actions';
 import YearFilter from './YearFilter';
+import './Movies.css';
 
 const Movies = ({
   movie, FetchApidata, changeFilter,
@@ -59,9 +60,9 @@ const Movies = ({
     <div>
       <YearFilter changeFilter={changeFilter} />
       ,
-      <div className="d-flex justify-content-around flex-wrap">
+      <div className="d-flex justify-content-around flex-wrap align-items-center">
         {filteredMovies.map((elt) => (
-          <div key={elt.imbdID}>
+          <div key={elt.imbdID} className="pt-4">
             <Link
               to={{
                 pathname: '/movieDetails',

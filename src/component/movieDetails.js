@@ -23,14 +23,14 @@ const movieDetails = (props) => {
   }
   return (
     <div className="container">
-      <div>
+      <div className="text-center pt-2">
         <Link to="/">
           Home
         </Link>
 
       </div>
       <div className="mt-5 text-center">
-        <img className="w-50" src={movieData.movieData.Poster} alt={movieData.movieData.Title} />
+        <img src={movieData.movieData.Poster} alt={movieData.movieData.Title} />
 
         <div>
           <span> Title: </span>
