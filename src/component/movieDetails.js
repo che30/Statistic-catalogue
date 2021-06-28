@@ -23,7 +23,7 @@ const movieDetails = (props) => {
   }
   return (
     <div className="container">
-      <div className="text-center pt-2">
+      <div className="text-center pt-2 h3">
         <Link to="/">
           Home
         </Link>
