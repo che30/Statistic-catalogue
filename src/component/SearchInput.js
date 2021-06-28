@@ -25,16 +25,19 @@ const SearchInput = ({ getMovie }) => {
     });
   };
   return (
-    <div className="d-flex align-items-baseline justify-content-around">
-      <form className="d-flex mt-3">
+    <div className=" ">
+      <form className="d-flex w-100 justify-content-around text-center mt-3 ">
         <input
           type="input"
           placeholder="enter movie title"
           id="input-title"
           value={movie.movieTitle}
           onChange={handleChange}
+          className="w-25"
         />
-        <button type="button" onClick={handleSubmit}>search </button>
+        <div>
+          <button type="button" onClick={handleSubmit}>search </button>
+        </div>
       </form>
     </div>
   );

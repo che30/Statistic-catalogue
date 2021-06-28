@@ -14,7 +14,7 @@ const movieDetails = (props) => {
   if (Object.keys(movieData).length === 0) {
     return (
       <div className="text-center h1">
-        Loading movies
+        Loading movie
       </div>
     );
   }

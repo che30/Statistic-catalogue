@@ -1,0 +1,15 @@
+.categories{
+  margin-left: 57%;
+  position: absolute;
+  top: 20px;
+}
+@media(max-width: 768px){
+  .categories{
+    margin-left: 50%;
+  }
+}
+@media(max-width: 567px){
+  .categories{
+    margin-left: 47%;
+  }
+}

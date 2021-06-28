@@ -54,10 +54,6 @@ const Movies = ({
     } else {
       filteredMovies = [...movie.movies];
     }
-    // filteredMovies = (yearfiltre !== 'All') ? movie.movies.filter((movie) => {
-    //   console.log(movie.Year === yearfiltre.slice(0, 4));
-    //   return (movie.Year === (Number(yearfiltre.slice(0, 4)) + 1).toString());
-    // }) : movie.movies;
   }
   return (
     <div>
