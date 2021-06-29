@@ -67,8 +67,13 @@ const Movies = ({
                   state: { imdbID: elt.imdbID },
                 }}
                 key={elt.imbdID}
+                className="text-decoration-none"
               >
                 <img src={elt.Poster} key={elt.imbdID} alt="batman" />
+                <div className="subtitle">
+                  <div>{elt.Title}</div>
+                  <div>{elt.Year}</div>
+                </div>
               </Link>
             </div>
           ))}
