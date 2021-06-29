@@ -24,15 +24,15 @@ const Movies = ({
         loading movie data
       </div>
     );
-  } if (movie.error) {
+  } if (movie.error === undefined) {
     return (
-      <div>
+      <div className="text-center mt-5 alert alert-danger text-dark">
         There was an error fetching this movie check your internet connection
       </div>
     );
   } if (movie.movies === undefined) {
     return (
-      <div>
+      <div className="text-center mt-3 alert alert-info text-dark">
         sorry we are not able to find this movie
       </div>
     );

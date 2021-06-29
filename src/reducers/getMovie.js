@@ -24,6 +24,7 @@ const getMovie = (state = initialState, action) => {
           movies: action.movies,
           title: action.movies.Title,
           year: action.movies.Year,
+          error: action.movies.error,
           imbdID: action.movies.imdbID,
         };
       }
