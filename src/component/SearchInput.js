@@ -37,7 +37,7 @@ const SearchInput = ({ getMovie }) => {
           className="w-25 input-form text-center"
         />
         <div>
-          <button type="button" className="bg-dark text-white" onClick={handleSubmit}>search </button>
+          <button type="button" className="bg-dark text-white px-3 rounded py-1" onClick={handleSubmit}>search </button>
         </div>
       </form>
     </div>

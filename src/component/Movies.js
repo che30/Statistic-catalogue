@@ -53,7 +53,7 @@ const Movies = ({
     }
   }
   return (
-    <div>
+    <div className="pb-5">
       <YearFilter changeFilter={changeFilter} />
       ,
       <div className="container">

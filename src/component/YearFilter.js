@@ -9,7 +9,7 @@ const YearFilter = ({ changeFilter }) => {
   return (
     <div className="categories">
       <label>
-        <select className="catFilter" onChange={(e) => { changeFilter(e.target.value); }}>
+        <select className="catFilter py-2 " onChange={(e) => { changeFilter(e.target.value); }}>
           {categories.map((cat) => (<option key={cat} value={cat}>{cat}</option>))}
         </select>
       </label>

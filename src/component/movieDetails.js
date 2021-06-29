@@ -79,7 +79,7 @@ const movieDetails = (props) => {
         </div>
         <div className="text-center mx-auto py-3 h3 bg-dark w-25 text-danger">
           <Link className="text-danger text-decoration-none" to="/">
-            BACK TO Home
+            BACK TO HOME
           </Link>
 
         </div>

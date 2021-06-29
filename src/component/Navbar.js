@@ -1,5 +1,5 @@
 const Navbar = () => (
-  <div className="bg-dark text-center py-3 text-danger">
+  <div className="bg-dark text-center h2 py-3 text-danger">
     MOVIE DATABASE
   </div>
 );
