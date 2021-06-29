@@ -25,16 +25,23 @@ const Movies = ({
       </div>
     );
   } if (movie.error === undefined) {
+    setTimeout(() => {
+      window.location.reload();
+    }, 3000);
     return (
       <div className="text-center mt-5 alert alert-danger text-dark">
         There was an error fetching this movie check your internet connection
+        Or check your spelling
       </div>
     );
   } if (movie.movies === undefined) {
     return (
-      <div className="text-center mt-3 alert alert-info text-dark">
-        sorry we are not able to find this movie
-      </div>
+      <>
+        <div className="text-center mt-3 alert alert-info text-dark">
+          sorry we are not able to find this movie
+        </div>
+
+      </>
     );
   }
   let filteredMovies = [];
