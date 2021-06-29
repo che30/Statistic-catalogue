@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import {
   Link,
 } from 'react-router-dom';
+import Navbar from './Navbar';
 
 const movieDetails = (props) => {
   const [movieData, setMovieData] = useState({});
@@ -22,12 +23,9 @@ const movieDetails = (props) => {
     );
   }
   return (
-    <div className="container">
-      <div className="text-center pt-2 h3">
-        <Link to="/">
-          Home
-        </Link>
-
+    <div>
+      <div>
+        <Navbar />
       </div>
       <div className="mt-5 text-center">
         <div className="container ">
@@ -78,6 +76,12 @@ const movieDetails = (props) => {
             <span>Production:  </span>
             {movieData.movieData.Production}
           </div>
+        </div>
+        <div className="text-center mx-auto py-3 h3 bg-dark w-25 text-danger">
+          <Link className="text-danger text-decoration-none" to="/">
+            BACK TO Home
+          </Link>
+
         </div>
       </div>
     </div>

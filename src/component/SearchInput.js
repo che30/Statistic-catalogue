@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import FetchData from '../container/Fetchdata';
 import { SearchMovie } from '../actions';
+import './Searchinput.css';
 
 const SearchInput = ({ getMovie }) => {
   const [movie, setMovie] = useState({
@@ -33,10 +34,10 @@ const SearchInput = ({ getMovie }) => {
           id="input-title"
           value={movie.movieTitle}
           onChange={handleChange}
-          className="w-25"
+          className="w-25 input-form text-center"
         />
         <div>
-          <button type="button" onClick={handleSubmit}>search </button>
+          <button type="button" className="bg-dark text-white" onClick={handleSubmit}>search </button>
         </div>
       </form>
     </div>
