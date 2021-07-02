@@ -23,7 +23,7 @@ describe('search input methods', () => {
 
       .create(<Provider store={store}>
         <App />
-              </Provider>)
+      </Provider>)
       .toJSON();
     expect(tree).toMatchSnapshot();
   });

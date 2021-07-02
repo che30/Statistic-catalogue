@@ -6,7 +6,7 @@ import FetchData from '../container/Fetchdata';
 import { SearchMovie } from '../actions';
 import './Searchinput.css';
 
-export const SearchInput = ({ getMovie }) => {
+const SearchInput = ({ getMovie }) => {
   const [movie, setMovie] = useState({
     movieTitle: '',
   });

@@ -15,7 +15,7 @@ describe('search input methods', () => {
 
       .create(<Provider store={store}>
         <MovieDetails />
-              </Provider>)
+      </Provider>)
       .toJSON();
     expect(tree).toMatchSnapshot();
   });
