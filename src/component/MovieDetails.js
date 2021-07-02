@@ -5,7 +5,7 @@ import {
 import Navbar from './Navbar';
 import './movieDetail.css';
 
-const movieDetails = (props) => {
+const MovieDetails = (props) => {
   const [movieData, setMovieData] = useState({});
   useEffect(() => {
     fetch(`http://www.omdbapi.com/?apikey=42852a78&i=${props.location.state.imdbID}`)
@@ -92,4 +92,4 @@ const movieDetails = (props) => {
   );
 };
 
-export default (movieDetails);
+export default (MovieDetails);

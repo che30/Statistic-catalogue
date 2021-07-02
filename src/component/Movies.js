@@ -70,7 +70,7 @@ const Movies = ({
             <div key={elt.imbdID} className="pt-4 pr-3 col-12 col-md-4 col-lg-4 ">
               <Link
                 to={{
-                  pathname: '/movieDetails',
+                  pathname: '/MovieDetails',
                   state: { imdbID: elt.imdbID },
                 }}
                 key={elt.imbdID}

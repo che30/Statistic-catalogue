@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import './YearFilter.css';
 
 const YearFilter = ({ changeFilter }) => {
+  console.log(typeof changeFilter);
   const categories = ['All', '2000-2002', '2003-2005',
     '2006-2008', '2009-2011', '2012-2014', '2016-2018', '2020-2021'];
   return (
