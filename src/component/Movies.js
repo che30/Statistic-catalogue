@@ -25,9 +25,9 @@ const Movies = ({
       </div>
     );
   } if (movie.error === undefined) {
-    setTimeout(() => {
-      window.location.reload();
-    }, 3000);
+    // setTimeout(() => {
+    //   window.location.reload();
+    // }, 3000);
     return (
       <div className="text-center mt-5 alert alert-danger text-dark">
         There was an error fetching this movie check your internet connection
