@@ -67,7 +67,7 @@ const Movies = ({
 
         <div className="row ">
           {filteredMovies.map((elt) => (
-            <div key={elt.imbdID} className="pt-4 pr-3 col-12 col-md-4 col-lg-4 ">
+            <div key={elt.imbdID} className="pt-1 pr-3 col-12 col-md-4 col-lg-4 ">
               <Link
                 to={{
                   pathname: '/MovieDetails',
