@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<nav
+  className="bg-dark text-center h2 py-3 text-danger"
+>
+  MOVIE DATABASE
+</nav>
+`;

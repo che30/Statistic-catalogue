@@ -1,13 +1,13 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import App from './component/App';
-import movieDetails from './component/movieDetails';
+import MovieDetails from './component/MovieDetails';
 
 const Routes = () => (
   <main>
     <Switch>
       <Route path="/" component={App} exact />
-      <Route path="/movieDetails" component={movieDetails} />
+      <Route path="/MovieDetails" component={MovieDetails} />
     </Switch>
   </main>
 );
