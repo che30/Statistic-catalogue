@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-closing-tag-location */
 import React from 'react';
 import renderer from 'react-test-renderer';
 import { render } from '@testing-library/react';
@@ -6,15 +7,6 @@ import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 import rootReducer from '../reducers';
 import SearchInput from './SearchInput';
-//  const initialState = {
-//    title: 'batman',
-//    loading: true,
-//    movies: [],
-//    error: '',
-//    year: '',
-//    imbdID: '',
-
-//  };
 
 describe('search input methods', () => {
   const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
