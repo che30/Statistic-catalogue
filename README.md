@@ -7,11 +7,6 @@ but this the movieId is passed as a paramter.
 # Screenshot
 
  ![screenshot](./movieCat.png)
- <p align='center' class='d-flex'>
-    <span align="">
-    <img  title='wave' alt='screenshot' src='./movieCat'>
-  </span>
-</p>
 ## Built With
 - Javascript
 - React framework
