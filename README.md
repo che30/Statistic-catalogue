@@ -6,7 +6,7 @@ This project is made up of 2 pages :
 but this the movieId is passed as a paramter.
 # Screenshot
 
- ![screenshot]('./movieCat.png')
+ ![screenshot](./movieCat.png)
  <p align='center' class='d-flex'>
     <span align="">
     <img  title='wave' alt='screenshot' src='./movieCat'>
