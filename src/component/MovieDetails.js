@@ -9,7 +9,7 @@ import './movieDetail.css';
 const MovieDetails = (props) => {
   const [movieData, setMovieData] = useState({});
   useEffect(() => {
-    fetch(`http://www.omdbapi.com/?apikey=42852a78&i=${props.location.state.imdbID}`)
+    fetch(`https://www.omdbapi.com/?apikey=42852a78&i=${props.location.state.imdbID}`)
       .then((response) => response.json())
       .then((result) => {
         setMovieData({
