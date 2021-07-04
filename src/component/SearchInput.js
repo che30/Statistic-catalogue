@@ -26,7 +26,7 @@ const SearchInput = ({ getMovie }) => {
     });
   };
   return (
-    <div className=" search-form ">
+    <div className=" search-form mt-5">
       <form className="d-flex w-100 justify-content-around text-center mt-3 ">
         <input
           type="input"

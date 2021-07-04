@@ -21,7 +21,7 @@ const SearchMovieFailure = (error) => ({
 });
 const FetchApidata = () => (dispatch) => {
   dispatch(FetchMovieRequest);
-  fetch('http://www.omdbapi.com/?apikey=42852a78&s=batman')
+  fetch('https://www.omdbapi.com/?apikey=42852a78&s=batman')
     .then((response) => response.json())
     .then((response) => {
       dispatch(FetchMovieSucces([...response.Search]));

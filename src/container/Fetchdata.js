@@ -1,5 +1,5 @@
 async function FetchData(value) {
-  const rawData = await fetch(`http://www.omdbapi.com/?apikey=42852a78&s=${value}`);
+  const rawData = await fetch(`https://www.omdbapi.com/?apikey=42852a78&s=${value}`);
   const result = await rawData.json();
   if (result.Response === 'False') {
     console.log('error is false');

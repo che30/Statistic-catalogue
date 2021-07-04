@@ -20,7 +20,7 @@ const Movies = ({
   }, []);
   if (movie.loading) {
     return (
-      <div>
+      <div className="text-center h2 mt-3">
         loading movie data
       </div>
     );
@@ -63,7 +63,7 @@ const Movies = ({
     <div className="pb-5">
       <YearFilter changeFilter={changeFilter} />
       ,
-      <div className="container">
+      <div className="container ">
 
         <div className="row ">
           {filteredMovies.map((elt) => (
