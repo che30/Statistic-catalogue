@@ -41,7 +41,6 @@ In order to run tests type the command `npm run test`
 - Twitter: [@che55085128](https://twitter.com/che55085128)
 ## Acknowledgements
 - Microverse
-- Behance
 - The Open Movie Database(OMDb API)
 ##  Contributing
 
