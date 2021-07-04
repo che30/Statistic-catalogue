@@ -32,8 +32,8 @@ const MovieDetails = (props) => {
       <div className="mt-5 text-center">
         <div className="container ">
           <div className="row">
-            <div className="col-4 mx-auto">
-              <img src={movieData.movieData.Poster} alt={movieData.movieData.Title} />
+            <div className="col-6 col-lg-5  mx-auto">
+              <img className="w-100" src={movieData.movieData.Poster} alt={movieData.movieData.Title} />
             </div>
           </div>
 
