@@ -5,12 +5,13 @@ This project is made up of 2 pages :
 - Another which displays the details of the movie still fetched from The Open Movie Database(OMDb API)
 but this the movieId is passed as a paramter.
 # Screenshot
-<p align='center' class='d-flex'>
+
+ ![screenshot]('./movieCat.png')
+ <p align='center' class='d-flex'>
     <span align="">
     <img  title='wave' alt='screenshot' src='./movieCat'>
   </span>
 </p>
- ![screenshot]('./movieCat')
 ## Built With
 - Javascript
 - React framework
