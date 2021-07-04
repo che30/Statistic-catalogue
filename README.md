@@ -1,9 +1,9 @@
 # Catalogue of Statistics of movies
 This app is a browsable list of movies that can be filtered and the details of each movie can be obtained.
 This project is made up of 2 pages :
-- One which displays data fetched from the The Open Movie Database(OMDb API) with default movie title`BATMAN` other movies can be searched by entering the movie title in the search field and using the search button to search the movies.
+- One which displays data fetched from The Open Movie Database(OMDb API) with default movie title`BATMAN` other movies can be searched by entering the movie title in the search field and using the search button to search the movies.
 - Another which displays the details of the movie still fetched from The Open Movie Database(OMDb API)
-but this the movieId is passed as a paramter.
+but this time the movieId is passed as a parameter.
 # Screenshot
 
  ![screenshot](./movieCat.png)
@@ -20,7 +20,7 @@ but this the movieId is passed as a paramter.
 - Redux thunk
 
 ## Getting started
-   To get a local copy up and running follow these simple example steps and type the necessary  highlited commands on your terminal.
+   To get a local copy up and running follow these simple example steps and type the necessary highlighted commands on your terminal.
    1. `git clone git@github.com:che30/Statistic-catalogue.git`
    2. `cd Statistic-catalogue`
    3. `git checkout feature`
