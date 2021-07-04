@@ -19,14 +19,16 @@ const getMovie = (state = initialState, action) => {
   switch (action.type) {
     case SEARCH_MOVIE:
       if (action.movies) {
-        return {
-          ...state,
-          movies: action.movies,
-          title: action.movies.Title,
-          year: action.movies.Year,
-          error: action.movies.error,
-          imbdID: action.movies.imdbID,
-        };
+        if (action.movies.error === undefined) {
+          return {
+            ...state,
+            movies: action.movies,
+            title: action.movies.Title,
+            year: action.movies.Year,
+            error: '',
+            imbdID: action.movies.imdbID,
+          };
+        }
       }
       break;
     case FETCH_MOVIE_REQUEST:
