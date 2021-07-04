@@ -1,20 +1,23 @@
-.categories{
+.categories {
   margin-left: 55%;
   position: absolute;
   top: 115px;
 }
-.catFilter{
+
+.catFilter {
   border: 1px solid gray;
   background-color: white;
   color: black;
 }
-@media(max-width: 768px){
-  .categories{
+
+@media (max-width: 768px) {
+  .categories {
     margin-left: 50%;
   }
 }
-@media(max-width: 567px){
-  .categories{
+
+@media (max-width: 567px) {
+  .categories {
     margin-left: 43%;
   }
 }

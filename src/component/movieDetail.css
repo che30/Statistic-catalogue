@@ -1,7 +1,8 @@
-body{
+body {
   background-color: rgb(204, 200, 200);
 }
-.t-dark{
+
+.t-dark {
   color: black;
   font-weight: 900;
 }
