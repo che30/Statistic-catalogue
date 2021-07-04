@@ -17,7 +17,10 @@ const YearFilter = ({ changeFilter }) => {
 
   );
 };
+YearFilter.defaultProps = {
+  changeFilter() {},
+};
 YearFilter.propTypes = {
-  changeFilter: PropTypes.func.isRequired,
+  changeFilter: PropTypes.func,
 };
 export default YearFilter;

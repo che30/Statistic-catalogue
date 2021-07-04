@@ -10,7 +10,7 @@ exports[`search input methods renders properly 1`] = `
     MOVIE DATABASE
   </nav>
   <div
-    className=" search-form "
+    className=" search-form mt-5"
   >
     <form
       className="d-flex w-100 justify-content-around text-center mt-3 "
@@ -34,7 +34,9 @@ exports[`search input methods renders properly 1`] = `
       </div>
     </form>
   </div>
-  <div>
+  <div
+    className="text-center h2"
+  >
     loading movie data
   </div>
 </div>
