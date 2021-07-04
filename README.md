@@ -9,9 +9,15 @@ but this the movieId is passed as a paramter.
  ![screenshot](./movieCat.png)
 ## Built With
 - Javascript
+- HTML
+- CSS
 - React framework
 - Redux
 - Webpack
+- Jest
+- React Testing Library
+- Bootstrap
+- Redux thunk
 
 ## Getting started
    To get a local copy up and running follow these simple example steps and type the necessary  highlited commands on your terminal.
