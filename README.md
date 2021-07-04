@@ -5,7 +5,7 @@ This project is made up of 2 pages :
 - Another which displays the details of the movie still fetched from The Open Movie Database(OMDb API)
 but this the movieId is passed as a paramter.
 # Screenshot
- ![screenshot]('../assets/img/movieCat.png')
+ ![screenshot]('./assets/img/movieCat.png')
 ## Built With
 - Javascript
 - React framework
@@ -20,7 +20,7 @@ but this the movieId is passed as a paramter.
    4. `npm install or yarn install`
    5. ` npm start`
 # TESTS
-In order to run tests use the command `npm run test`
+In order to run tests type the command `npm run test`
 
 
 
