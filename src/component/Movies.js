@@ -9,7 +9,7 @@ import {
 } from 'react-router-dom';
 import { FetchApidata, FilterYear } from '../actions';
 import YearFilter from './YearFilter';
-import './Movies.css';
+import '../assets/Movies.css';
 
 const Movies = ({
   movie, FetchApidata, changeFilter,

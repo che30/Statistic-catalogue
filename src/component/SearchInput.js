@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import FetchData from '../container/Fetchdata';
 import { SearchMovie } from '../actions';
-import './Searchinput.css';
+import '../assets/Searchinput.css';
 
 const SearchInput = ({ getMovie }) => {
   const [movie, setMovie] = useState({

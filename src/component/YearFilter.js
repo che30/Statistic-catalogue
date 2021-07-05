@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React from 'react';
 import PropTypes from 'prop-types';
-import './YearFilter.css';
+import '../assets/YearFilter.css';
 
 const YearFilter = ({ changeFilter }) => {
   const categories = ['All', '2000-2002', '2003-2005',

@@ -4,7 +4,7 @@ import {
   Link,
 } from 'react-router-dom';
 import Navbar from './Navbar';
-import './movieDetail.css';
+import '../assets/movieDetail.css';
 
 const MovieDetails = (props) => {
   const [movieData, setMovieData] = useState({});

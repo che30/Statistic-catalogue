@@ -2,7 +2,7 @@
 
 exports[`search input methods renders correctly 1`] = `
 <div
-  className=" search-form "
+  className=" search-form mt-5"
 >
   <form
     className="d-flex w-100 justify-content-around text-center mt-3 "
