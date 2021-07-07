@@ -1,6 +1,3 @@
-/* eslint-disable react/require-default-props */
-/* eslint-disable react/prop-types */
-
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
@@ -47,11 +44,11 @@ const Movies = ({
   let filteredMovies = [];
   if (yearfiltre.slice(0, 4)) {
     if (yearfiltre !== 'All') {
-      movie.movies.map((movie) => {
-        if (movie.Year === yearfiltre.slice(0, 4)
-        || movie.Year === (Number(yearfiltre.slice(0, 4)) + 1).toString()
-        || movie.Year === (Number(yearfiltre.slice(0, 4)) + 2).toString()) {
-          filteredMovies.push(movie);
+      movie.movies.map((eachmovie) => {
+        if (eachmovie.Year === yearfiltre.slice(0, 4)
+        || eachmovie.Year === (Number(yearfiltre.slice(0, 4)) + 1).toString()
+        || eachmovie.Year === (Number(yearfiltre.slice(0, 4)) + 2).toString()) {
+          filteredMovies.push(eachmovie);
         }
         return false;
       });
@@ -94,6 +91,17 @@ const Movies = ({
 Movies.propTypes = {
   FetchApidata: PropTypes.func.isRequired,
   changeFilter: PropTypes.func.isRequired,
+  movie: PropTypes.shape({
+    loading: PropTypes.string,
+    error: PropTypes.string,
+    movies: PropTypes.arrayOf(PropTypes.shape({
+      imbdID: PropTypes.string,
+      Title: PropTypes.string,
+      Year: PropTypes.string,
+      eachmovie: PropTypes.string.isRequired,
+    }).isRequired),
+  }).isRequired,
+  yearfiltre: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 const mapStateToProps = (state) => ({
   movie: state.movie,
@@ -105,4 +113,3 @@ const mapDispatchToProps = (dispatch) => ({
   changeFilter: (category) => dispatch(FilterYear(category)),
 });
 export default connect(mapStateToProps, mapDispatchToProps)(Movies);
-/* eslint-enable react/require-default-props */
