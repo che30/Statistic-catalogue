@@ -1,29 +1,21 @@
-import React, { useState, useEffect } from 'react';
+/* eslint-disable react/prop-types
+ */
+import React, { useEffect } from 'react';
 import {
   Link,
 } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import Navbar from './Navbar';
+import { Moviesearchdetails } from '../actions';
+import FetchDetail from '../container/Fetchdetail';
 import '../assets/movieDetail.css';
 
 const MovieDetails = (props) => {
-  const [movieData, setMovieData] = useState({});
+  const { location, detailOfMovie, getdetails } = props;
   useEffect(() => {
-    fetch(`https://www.omdbapi.com/?apikey=42852a78&i=${props.location.state.imdbID}`)
-      .then((response) => response.json())
-      .then((result) => {
-        setMovieData({
-          movieData: result,
-        });
-      });
+    FetchDetail(location.state.imdbID).then((res) => getdetails(res));
   }, []);
-  if (Object.keys(movieData).length === 0) {
-    return (
-      <div className="text-center h1">
-        Loading Details
-      </div>
-    );
-  }
   return (
     <div>
       <div>
@@ -33,53 +25,53 @@ const MovieDetails = (props) => {
         <div className="container ">
           <div className="row">
             <div className="col-6 col-lg-5  mx-auto">
-              <img className="w-100" src={movieData.movieData.Poster} alt={movieData.movieData.Title} />
+              <img className="w-100" src={detailOfMovie.poster} alt={detailOfMovie.Title} />
             </div>
           </div>
 
           <div>
             <span className="t-dark"> Title: </span>
-            <span className="text-primary">{movieData.movieData.Title}</span>
+            <span className="text-primary">{detailOfMovie.title}</span>
           </div>
 
           <div>
             <span className="t-dark"> Date released: </span>
-            <span className="text-primary">{movieData.movieData.Released}</span>
+            <span className="text-primary">{detailOfMovie.released}</span>
           </div>
           <div>
             <span className="t-dark"> Genre: </span>
             <span className="text-primary">
               {' '}
-              {movieData.movieData.Genre}
+              {detailOfMovie.genre}
             </span>
           </div>
           <div>
             <span className="t-dark"> Country: </span>
-            <span className="text-primary">{movieData.movieData.Country}</span>
+            <span className="text-primary">{detailOfMovie.country}</span>
           </div>
           <div>
             <span className="t-dark"> Actor: </span>
-            <span className="text-primary">{movieData.movieData.Actors}</span>
+            <span className="text-primary">{detailOfMovie.actors}</span>
           </div>
           <div>
             <span className="t-dark">Director: </span>
-            <span className="text-primary">{movieData.movieData.Director}</span>
+            <span className="text-primary">{detailOfMovie.director}</span>
           </div>
           <div>
             <span className="t-dark">Awards: </span>
-            <span className="text-primary">{movieData.movieData.Awards}</span>
+            <span className="text-primary">{detailOfMovie.awards}</span>
           </div>
           <div>
             <span className="t-dark">Writer: </span>
-            <span className="text-primary">{movieData.movieData.Writer}</span>
+            <span className="text-primary">{detailOfMovie.writer}</span>
           </div>
           <div>
             <span className="t-dark">Year: </span>
-            <span className="text-primary">{movieData.movieData.Year}</span>
+            <span className="text-primary">{detailOfMovie.year}</span>
           </div>
           <div>
             <span className="t-dark">Production:  </span>
-            <span className="text-primary">{movieData.movieData.Production}</span>
+            <span className="text-primary">{detailOfMovie.production}</span>
           </div>
         </div>
         <div className="text-center mx-auto py-3  mb-5 mt-3 h3 bg-dark w-25 text-danger">
@@ -92,8 +84,10 @@ const MovieDetails = (props) => {
     </div>
   );
 };
+
 MovieDetails.defaultProps = {
   location: {},
+  getdetails() {},
 };
 MovieDetails.propTypes = {
   location: PropTypes.shape({
@@ -101,6 +95,13 @@ MovieDetails.propTypes = {
       imdbID: PropTypes.string.isRequired,
     }),
   }),
+  getdetails: PropTypes.func,
 };
+const mapStateProps = (state) => ({
+  detailOfMovie: state.moviedetail,
+});
+const mapDispatchToProps = (dispatch) => ({
+  getdetails: (details) => dispatch(Moviesearchdetails(details)),
+});
 
-export default (MovieDetails);
+export default connect(mapStateProps, mapDispatchToProps)(MovieDetails);
