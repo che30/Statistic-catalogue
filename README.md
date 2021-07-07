@@ -29,9 +29,9 @@ but this time the movieId is passed as a parameter.
 # TESTS
 In order to run tests type the command `npm run test`
 ##  presentation of project
-[presentation of project](https://www.loom.com/share/73a1454dacd44571913eabfb6d7d5916)
+[click me to see](https://www.loom.com/share/73a1454dacd44571913eabfb6d7d5916)
 ##  explanation of technical terms
-[explanation of technical terms](https://www.loom.com/share/dea71c599e8b4c2eaa201cd698518f58)
+[click me to see](https://www.loom.com/share/dea71c599e8b4c2eaa201cd698518f58)
 
 ## Click the link below to see the live demo
 - [Click this link to see live demo](https://chemoviecatalogue.herokuapp.com/)
