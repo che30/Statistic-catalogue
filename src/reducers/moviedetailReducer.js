@@ -25,7 +25,7 @@ const MovieDetailsReducer = (state = initState, action) => {
         genre: action.detail.Genre,
         actor: action.detail.Actors,
         director: action.detail.Director,
-        award: action.detail.Award,
+        award: action.detail.Awards,
         writer: action.detail.Writer,
         year: action.detail.Year,
         producer: action.detail.Producer,
