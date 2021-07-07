@@ -1,10 +1,11 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import Navbar from './Navbar';
+import YearFilter from '../component/YearFilter';
 
 it('renders correctly', () => {
   const tree = renderer
-    .create(<Navbar />)
+
+    .create(<YearFilter />)
     .toJSON();
   expect(tree).toMatchSnapshot();
 });
