@@ -1,8 +1,8 @@
-/* eslint-disable react/prop-types */
 import React, { useState, useEffect } from 'react';
 import {
   Link,
 } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import Navbar from './Navbar';
 import '../assets/movieDetail.css';
 
@@ -91,6 +91,13 @@ const MovieDetails = (props) => {
       </div>
     </div>
   );
+};
+MovieDetails.propTypes = {
+  location: PropTypes.shape({
+    state: PropTypes.shape({
+      imdbID: PropTypes.string.isRequired,
+    }),
+  }).isRequired,
 };
 
 export default (MovieDetails);
