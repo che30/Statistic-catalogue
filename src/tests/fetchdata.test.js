@@ -7,6 +7,13 @@ it('Renders the connected app with initialState', () => {
     expect(data.Search[0].Title).toBe('The Avengers');
   });
 });
+it('Renders renders error when not found', () => {
+  const promise = Fetchdata('1234567');
+  const json = promise.then((values) => values.json());
+  json.then((data) => {
+    expect(data.Search[0].Response).toBe('False');
+  });
+});
 it('Mocks the Fetchdata implementation', () => {
   const Fetchdata = jest.fn().mockImplementation((url) => {
     const key = url.split('s=')[1];
