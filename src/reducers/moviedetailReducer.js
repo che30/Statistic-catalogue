@@ -17,7 +17,6 @@ const initState = {
 const MovieDetailsReducer = (state = initState, action) => {
   switch (action.type) {
     case SEARCH_MOVIE_DETAILS:
-      console.log(action.detail.Poster);
       return {
         ...state,
         poster: action.detail.Poster,
