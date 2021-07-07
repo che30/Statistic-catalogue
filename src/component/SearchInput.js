@@ -1,29 +1,22 @@
-import React, { useState } from 'react';
+import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import FetchData from '../container/Fetchdata';
-import { SearchMovie } from '../actions';
+import { SearchMovie, TypedMovieTitle } from '../actions';
 import '../assets/Searchinput.css';
 
-const SearchInput = ({ getMovie }) => {
-  const [movie, setMovie] = useState({
-    movieTitle: '',
-  });
+const SearchInput = ({ getMovie, typedMovie, movie }) => {
   const handleChange = (e) => {
     if (e.target.id === 'input-title') {
-      setMovie({
-        ...movie, movieTitle: e.target.value,
-      });
+      typedMovie(e.target.value);
     }
   };
   const handleSubmit = () => {
-    if (movie.movieTitle !== '') {
-      FetchData(movie.movieTitle).then((res) => getMovie(res));
+    if (movie.title !== '') {
+      FetchData(movie.title).then((res) => getMovie(res));
     }
-    setMovie({
-      movieTitle: '',
-    });
+    typedMovie('');
   };
   return (
     <div className=" search-form mt-5">
@@ -32,7 +25,7 @@ const SearchInput = ({ getMovie }) => {
           type="input"
           placeholder="enter movie title"
           id="input-title"
-          value={movie.movieTitle}
+          value={movie.title}
           onChange={handleChange}
           className="w-25 input-form text-center"
         />
@@ -43,10 +36,22 @@ const SearchInput = ({ getMovie }) => {
     </div>
   );
 };
+SearchInput.defaultProps = {
+  typedMovie() {},
+  movie: {},
+};
 SearchInput.propTypes = {
   getMovie: PropTypes.func.isRequired,
+  typedMovie: PropTypes.func,
+  movie: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+  }),
 };
+const mapStateProps = (state) => ({
+  movie: state.movie,
+});
 const mapDispatchToProps = (dispatch) => ({
   getMovie: (movie) => dispatch(SearchMovie(movie)),
+  typedMovie: (title) => dispatch(TypedMovieTitle(title)),
 });
-export default connect(null, mapDispatchToProps)(SearchInput);
+export default connect(mapStateProps, mapDispatchToProps)(SearchInput);

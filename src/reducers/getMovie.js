@@ -3,6 +3,7 @@ import {
   SEARCH_MOVIE_SUCCES,
   SEARCH_MOVIE_FAILURE,
   FETCH_MOVIE_REQUEST,
+  TYPED_MOVIE_TITLE,
 }
   from '../actions';
 
@@ -60,6 +61,11 @@ const getMovie = (state = initialState, action) => {
         loading: false,
         movies: [],
         error: action.payload,
+      };
+    case TYPED_MOVIE_TITLE:
+      return {
+        ...state,
+        title: action.title,
       };
 
     default:
