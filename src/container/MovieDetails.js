@@ -4,9 +4,9 @@ import {
 } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import Navbar from './Navbar';
+import Navbar from '../component/Navbar';
 import { Moviesearchdetails } from '../actions';
-import FetchDetail from '../container/Fetchdetail';
+import FetchDetail from '../searchapi/Fetchdetail';
 import '../assets/movieDetail.css';
 
 const MovieDetails = (props) => {

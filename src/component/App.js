@@ -1,7 +1,7 @@
 import React from 'react';
 import SearchInput from './SearchInput';
-import Movies from './Movies';
 import Navbar from './Navbar';
+import Movies from '../container/Movies';
 
 const App = () => (
   <div className="">

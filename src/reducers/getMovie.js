@@ -63,7 +63,9 @@ const getMovie = (state = initialState, action) => {
         error: action.payload,
       };
     case TYPED_MOVIE_TITLE:
+      initialState.title = action.title;
       return {
+        initialState: { title: action.title },
         ...state,
         title: action.title,
       };

@@ -5,7 +5,7 @@ import {
   Link,
 } from 'react-router-dom';
 import { FetchApidata, FilterYear } from '../actions';
-import YearFilter from './YearFilter';
+import YearFilter from '../component/YearFilter';
 import '../assets/Movies.css';
 
 const Movies = ({

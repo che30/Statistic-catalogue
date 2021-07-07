@@ -2,7 +2,7 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import FetchData from '../container/Fetchdata';
+import FetchData from '../searchapi/Fetchdata';
 import { SearchMovie, TypedMovieTitle } from '../actions';
 import '../assets/Searchinput.css';
 

@@ -1,4 +1,4 @@
-import Fetchdata from '../container/Fetchdata';
+import Fetchdata from '../searchapi/Fetchdata';
 
 it('Renders the connected app with initialState', () => {
   const promise = Fetchdata('avengers');
