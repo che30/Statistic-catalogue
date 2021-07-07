@@ -1,5 +1,3 @@
-/* eslint-disable react/prop-types
- */
 import React, { useEffect } from 'react';
 import {
   Link,
@@ -25,7 +23,7 @@ const MovieDetails = (props) => {
         <div className="container ">
           <div className="row">
             <div className="col-6 col-lg-5  mx-auto">
-              <img className="w-100" src={detailOfMovie.poster} alt={detailOfMovie.Title} />
+              <img className="w-100" src={detailOfMovie.poster} alt={detailOfMovie.title} />
             </div>
           </div>
 
@@ -51,7 +49,7 @@ const MovieDetails = (props) => {
           </div>
           <div>
             <span className="t-dark"> Actor: </span>
-            <span className="text-primary">{detailOfMovie.actors}</span>
+            <span className="text-primary">{detailOfMovie.actor}</span>
           </div>
           <div>
             <span className="t-dark">Director: </span>
@@ -59,7 +57,7 @@ const MovieDetails = (props) => {
           </div>
           <div>
             <span className="t-dark">Awards: </span>
-            <span className="text-primary">{detailOfMovie.awards}</span>
+            <span className="text-primary">{detailOfMovie.award}</span>
           </div>
           <div>
             <span className="t-dark">Writer: </span>
@@ -96,6 +94,19 @@ MovieDetails.propTypes = {
     }),
   }),
   getdetails: PropTypes.func,
+  detailOfMovie: PropTypes.shape({
+    poster: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    released: PropTypes.string.isRequired,
+    genre: PropTypes.string.isRequired,
+    actor: PropTypes.string.isRequired,
+    award: PropTypes.string.isRequired,
+    writer: PropTypes.string.isRequired,
+    year: PropTypes.string.isRequired,
+    production: PropTypes.string.isRequired,
+    country: PropTypes.string.isRequired,
+    director: PropTypes.string.isRequired,
+  }).isRequired,
 };
 const mapStateProps = (state) => ({
   detailOfMovie: state.moviedetail,

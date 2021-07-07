@@ -10,7 +10,7 @@ const initState = {
   award: '',
   writer: '',
   year: '',
-  producer: '',
+  production: '',
   country: '',
 
 };
@@ -34,7 +34,6 @@ const MovieDetailsReducer = (state = initState, action) => {
 
       };
     default:
-      console.log('it reaches default');
       return state;
   }
 };
