@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`search input methods renders properly 1`] = `
+<div
+  className="text-center h1"
+>
+  Loading movie
+</div>
+`;
