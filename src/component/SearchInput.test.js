@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-closing-tag-location */
 import React from 'react';
 import renderer from 'react-test-renderer';
 import { render } from '@testing-library/react';
@@ -22,9 +21,11 @@ describe('search input methods', () => {
   it('renders correctly', () => {
     const tree = renderer
 
-      .create(<Provider store={store}>
-        <SearchInput />
-      </Provider>)
+      .create(
+        <Provider store={store}>
+          <SearchInput />
+        </Provider>,
+      )
       .toJSON();
     expect(tree).toMatchSnapshot();
   });
