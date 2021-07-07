@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-closing-tag-location */
 import React from 'react';
 import renderer from 'react-test-renderer';
 import { createStore, compose, applyMiddleware } from 'redux';
@@ -14,9 +13,11 @@ describe('search input methods', () => {
   it('renders properly', () => {
     const tree = renderer
 
-      .create(<Provider store={store}>
-        <MovieDetails />
-      </Provider>)
+      .create(
+        <Provider store={store}>
+          <MovieDetails />
+        </Provider>,
+      )
       .toJSON();
     expect(tree).toMatchSnapshot();
   });
