@@ -23,13 +23,13 @@ const MovieDetailsReducer = (state = initState, action) => {
         title: action.detail.Title,
         released: action.detail.Released,
         genre: action.detail.Genre,
-        actor: action.detail.Actor,
+        actor: action.detail.Actors,
         director: action.detail.Director,
         award: action.detail.Award,
         writer: action.detail.Writer,
         year: action.detail.Year,
         producer: action.detail.Producer,
-        country: action.detail.country,
+        country: action.detail.Country,
 
       };
     default:
