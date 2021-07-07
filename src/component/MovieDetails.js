@@ -92,12 +92,15 @@ const MovieDetails = (props) => {
     </div>
   );
 };
+MovieDetails.defaultProps = {
+  location: {},
+};
 MovieDetails.propTypes = {
   location: PropTypes.shape({
     state: PropTypes.shape({
       imdbID: PropTypes.string.isRequired,
     }),
-  }).isRequired,
+  }),
 };
 
 export default (MovieDetails);

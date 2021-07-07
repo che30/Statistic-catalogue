@@ -91,8 +91,9 @@ const Movies = ({
 Movies.propTypes = {
   FetchApidata: PropTypes.func.isRequired,
   changeFilter: PropTypes.func.isRequired,
+  yearfiltre: PropTypes.string.isRequired,
   movie: PropTypes.shape({
-    loading: PropTypes.string,
+    loading: PropTypes.bool,
     error: PropTypes.string,
     movies: PropTypes.arrayOf(PropTypes.shape({
       imbdID: PropTypes.string,
@@ -101,7 +102,6 @@ Movies.propTypes = {
       eachmovie: PropTypes.string.isRequired,
     }).isRequired),
   }).isRequired,
-  yearfiltre: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 const mapStateToProps = (state) => ({
   movie: state.movie,
